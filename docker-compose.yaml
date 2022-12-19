@@ -9,7 +9,8 @@ services:
     depends_on:
       - "rest"
     volumes:
-      - ./:/app
+      - /templates/app/templates
+      - ./web.py:/app/web.py
   rest:
     build:
       context: .

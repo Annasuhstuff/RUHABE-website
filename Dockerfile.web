@@ -9,6 +9,14 @@ WORKDIR /app
 COPY requirements-web.txt /app/requirements.txt
 RUN pip3 install -r requirements.txt
 COPY web.py /app/web.py
+COPY templates /app/templates
+
+RUN mkdir -p /app/static/{js,css,img}
+COPY node_modules/bootstrap/dist/css/bootstrap.min.css /app/static/css/bootstrap.min.css
+COPY node_modules/bootstrap/dist/js/bootstrap.bundle.min.js /app/static/js/bootstrap.bundle.min.js
+COPY node_modules/jquery/dist/jquery.min.js /app/static/js/jquery.min.js
+
+
 
 CMD ["python3", "web.py"]
 
