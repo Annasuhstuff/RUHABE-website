@@ -1,0 +1,26 @@
+{
+  "name": "ruhabe-website",
+  "version": "1.0.0",
+  "description": "<em>Anna Palatkina, Elisey Rykov, Elina Sigdel, Anna Sukhanova, </em>",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Annasuhstuff/RUHABE-website.git"
+  },
+  "keywords": [
+    "ruhabe"
+  ],
+  "author": "",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/Annasuhstuff/RUHABE-website/issues"
+  },
+  "homepage": "https://github.com/Annasuhstuff/RUHABE-website#readme",
+  "dependencies": {
+    "bootstrap": "^5.2.3",
+    "jquery": "^3.6.2"
+  }
+}
