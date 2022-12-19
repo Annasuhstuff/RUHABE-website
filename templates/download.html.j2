@@ -1,0 +1,67 @@
+{% extends "base.html.j2" %}
+
+{%block body%}
+<body>
+<main>
+    <div class="position-relative overflow-hidden text-center p-1 p-md-1 m-md-5">
+        <h1 class="display-5 font-weight-normal">Скачать датасеты</h1>
+        <p class="lead font-weight-normal">Здесь можно скачать несколько вариантов датасетов</p>
+        <dev class="d-flex justify-content-center align-items-center">
+            <ul>
+                <li> Полный датасет проекта</li>
+                <li> Датасеты по категориям</li>
+            </ul>
+        </dev>
+    </div>
+
+    <div class="position-relative overflow-scroll text-center p-1 p-md-1 m-md-4" style="height: 350px">
+        <div class="d-flex justify-content-between align-items-stretch"></div>
+        <div class="col-md-8 p-lg-8 mx-auto my-xxl-1">
+            <div class="row justify-content-around align-items-center">
+                <div class="col-md-8">
+                    <div class="row justify-content-around">
+                        <div class="col-md-6 box">
+                            <h4>LGBTQ+</h4>
+                            <p>вот тут файл</p>
+                        </div>
+                        <div class="col-md-6 box">
+                            <h4>Женщины</h4>
+                            <p>вот тут файл</p>
+                        </div>
+                    </div>
+                    <div class="row justify-content-around">
+                        <div class="col-md-6 box">
+                            <h4>Мужчины</h4>
+                            <p>вот тут файл</p>
+                        </div>
+                        <div class="col-md-6 box">
+                            <h4>Дети</h4>
+                            <p>вот тут файл</p>
+                        </div>
+                    </div>
+                    <div class="row justify-content-around">
+                        <div class="col-md-6 box">
+                            <h4>Мигранты</h4>
+                            <p>вот тут файл</p>
+                        </div>
+                        <div class="col-md-6 box">
+                            <h4>Цвет кожи</h4>
+                            <p>вот тут файл</p>
+                        </div>
+                    </div>
+                    <div class="pb-3 box">
+                        <h4>Другое</h4>
+                        <p>вот тут файл</p>
+                    </div>
+                </div>
+                <div class="col-md-4 box">
+                    <h4>Общий датасет</h4>
+                    <p>вот тут файл</p>
+                </div>
+            </div>
+        </div>
+    </div>
+
+</main>
+</body>
+{% endblock %}

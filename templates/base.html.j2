@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <title>RuHateBe</title>
+    <link href="{{ url_for('static', filename='css/bootstrap.min.css') }}" rel="stylesheet">
+    <style>
+        body {
+            height: 95%;
+        }
+        .footer {
+            position:absolute;
+            top:90%;
+            height:20px;
+            margin-top:-20px;
+            width:100%;
+        }
+    </style>
+
+    <nav class="navbar navbar-expand-lg navbar-light bg-light">
+      <div class="container-fluid">
+        <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarTogglerDemo03" aria-controls="navbarTogglerDemo03" aria-expanded="false" aria-label="Переключатель навигации">
+          <span class="navbar-toggler-icon"></span>
+        </button>
+        <a class="navbar-brand" href="index">RuHateBe</a>
+        <div class="collapse navbar-collapse" id="navbarTogglerDemo03">
+          <ul class="navbar-nav me-auto mb-md-4 mb-lg-0">
+            <li class="nav-item">
+              <a class="nav-link" href="about">О проекте</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="model_pred">Определить хейт</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="stats">Статистика</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="download">Скачать</a>
+            </li>
+          </ul>
+        </div>
+      </div>
+    </nav>
+</head>
+{% block body %}
+
+{% endblock %}
+
+<footer class="footer py-3 my-4">
+        <p class="text-center text-muted">© RuHateBe project</p>
+    </footer>
+</html>

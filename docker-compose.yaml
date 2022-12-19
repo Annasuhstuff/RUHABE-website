@@ -1,0 +1,29 @@
+version: "3.3"
+services:
+  web:
+    build:
+      context: .
+      dockerfile: Dockerfile.web
+    ports:
+      - "5000:5000"
+    depends_on:
+      - "rest"
+    volumes:
+      - /templates/app/templates
+      - ./web.py:/app/web.py
+  rest:
+    build:
+      context: .
+      dockerfile: Dockerfile.rest
+    ports:
+      - "8000:5000"
+    depends_on:
+      - "mongo"
+    volumes:
+      - ./:/app
+    environment:
+      - "MONGO_HOST=mongo"
+  mongo:
+    image: "mongo:4"
+    ports:
+      - "27018:27018"
