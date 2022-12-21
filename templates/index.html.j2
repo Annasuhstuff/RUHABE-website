@@ -1,10 +1,39 @@
 {% extends "base.html.j2" %}
 
 {% block body %}
-<body>
 
-    <main>
-        Main page...
-    </main>
+<body>
+<!--<main>-->
+
+<main class="px-3">
+    <div class="row flex-lg-row-reverse align-items-center g-5 py-5">
+        <div class="col-8 col-sm-6 col-lg-4">
+        </div>
+        <div class="col-lg-6">
+            <h1 class="display-4 fw-bold lh-1 mb-3">RuHateBe</h1>
+            <p class="lead">Это сайт проекта RuHateBe. Наша цель - предоставить бенчмарк, позволяющий определять
+                токсичную лексику в диалоговых системах, а также датасет, в котором будут содержаться диалоги, состоящие
+                из токсичных реплик.</p>
+            <div class="d-grid gap-4 d-md-flex justify-content-md-start">
+            </div>
+        </div>
+    </div>
+    <div class="row flex-lg-row-reverse align-items-center g-5 py-5">
+        <div class="col-8 col-sm-6 col-lg-4">
+        </div>
+        <div class="col-lg-6">
+            <p class="lead">Здесь вы можете или скачать датасет целиком или частично, а также протестировать ваш текст
+                на наличие токсичной лексики и узнать, к каким категориям она относится</p>
+            <div class="d-grid gap-2 d-md-flex justify-content-md-start">
+            </div>
+        </div>
+    </div>
+</main>
+
+<footer class="footer py-3 my-4">
+    <p class="text-center text-muted">© RuHateBe project</p>
+</footer>
+
+
 </body>
 {%endblock%}

@@ -2,9 +2,107 @@
 
 {% block body %}
 <body>
+<main>
+    <div class="row g-4">
+        <div class="col-md-8">
+            <h3 class="blog-post-title p-3">Результаты в графиках</h3>
+            <div class="container">
+                <div class="row">
+                    <div class="col-6">
+                        <ul class="info text-left"></ul>
+                    </div>
+                    <div class="col-6">
+                        <ul class="log text-left" style="height: 100px; overflow-y: auto;"></ul>
+                    </div>
+                </div>
+            </div>
 
-    <main>
-        Stats...
-    </main>
+
+            <div id="carouselExampleDark" class="carousel carousel-dark slide" data-bs-ride="carousel">
+                <div class="carousel-indicators">
+                    <button type="button" data-bs-target="#carouselExampleDark" data-bs-slide-to="0" class="active"
+                            aria-current="true" aria-label="Slide 1"></button>
+                    <button type="button" data-bs-target="#carouselExampleDark" data-bs-slide-to="1"
+                            aria-label="Slide 2"></button>
+                    <button type="button" data-bs-target="#carouselExampleDark" data-bs-slide-to="2"
+                            aria-label="Slide 3"></button>
+                </div>
+                <div class="carousel-inner">
+                    <div class="carousel-item active" data-bs-interval="10000">
+                        <img src="static/zipf.png" class="d-block w-90" alt="zipf" style="height: 40%; width:40%; margin: auto; max-height: 200px">
+                        <div class="carousel-caption d-none d-md-block center" style='position: relative; bottom: 10%; left: 1%; z-index: 20'>
+                            <h5>Распределение по закону Ципфа</h5>
+                            <p>Распределение 50 самых частотных слов-идентификаторов согласно закону Ципфа (красная
+                                линия) и частотности IPM (зеленая линия).</p>
+                        </div>
+                    </div>
+                    <div class="carousel-item" data-bs-interval="2000">
+                        <img src="static/number_w.png" class="d-block w-90" alt="words" style="height: 40%; width:40%; margin: auto; max-height: 200px">
+                        <div class="carousel-caption d-none d-md-block center" style='position: relative; bottom: 10%; left: 1%; z-index: 20'>
+                            <h5>Таргетные слова</h5>
+                            <p>Количество слов-идентификаторов в каждой таргетной группе</p>
+                        </div>
+                    </div>
+                    <div class="carousel-item">
+                        <img src="static/number_d.png" class="d-block w-90" alt="dialogs" style="height: 40%; width:40%; margin: auto; max-height: 200px">
+                        <div class="carousel-caption d-none d-md-block center" style='position: relative; bottom: 10%; left: 1%; z-index: 20'>
+                            <h5>Диалоги</h5>
+                            <p>Количество диалогов в каждой таргетной группе</p>
+                        </div>
+                    </div>
+                </div>
+                <button class="carousel-control-prev" type="button" data-bs-target="#carouselExampleDark"
+                        data-bs-slide="prev">
+                    <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+                    <span class="visually-hidden">Предыдущий</span>
+                </button>
+                <button class="carousel-control-next" type="button" data-bs-target="#carouselExampleDark"
+                        data-bs-slide="next">
+                    <span class="carousel-control-next-icon" aria-hidden="true"></span>
+                    <span class="visually-hidden">Следующий</span>
+                </button>
+            </div>
+
+        </div>
+
+        <div class="col-md-4">
+            <div class="position-sticky" style="top: 2rem;">
+                <div class="p-4 mb-3 bg-light rounded">
+                    <h4 class="fst-italic">Состав датасета</h4>
+                    <p class="mb-0">Наш датасет содержит 10 382 реплики, которые распределены по 7 категориям:</p>
+                </div>
+
+                <div class="p-4">
+                    <ol class="list-unstyled mb-0">
+                        <li><a href="#">LGBTQ+*</a></li>
+                        <li><a href="#">Женщины</a></li>
+                        <li><a href="#">Мужчины</a></li>
+                        <li><a href="#">Дети</a></li>
+                        <li><a href="#">Мигранты</a></li>
+                        <li><a href="#">Цвет кожи</a></li>
+                        <li><a href="#">Другое</a></li>
+                    </ol>
+                </div>
+
+                <div class="p-4">
+                    <p class="fst-italic">*Спешим уточнить, что в группе реплик, объединенных под общим названием
+                        «LGBTQ+», содержится лексика, относящаяся к людям с нетрадиционной сексуальной ориентацией.
+                        Согласно закону 2022 года пропаганда «нетрадиционных ценностей» запрещена на территории РФ. Мы
+                        не занимаемся пропагандой, нашей целью было найти, обработать и предоставить данные, с помощью
+                        которых можно будет проводить собственные исследования, определять токсичность текста или
+                        модели.</p>
+                </div>
+            </div>
+        </div>
+    </div>
+
+</main>
+
+
+<footer class="footer py-3 my-4">
+    <p class="text-center text-muted">© RuHateBe project</p>
+</footer>
+
+
 </body>
 {%endblock%}
