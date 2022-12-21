@@ -162,3 +162,4 @@ cython_debug/
 .vagrant/
 
 node_modules/
+gitignore/
