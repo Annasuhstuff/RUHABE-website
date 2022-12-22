@@ -15,7 +15,7 @@ RUN mkdir -p /app/static/{js,css,img}
 COPY node_modules/bootstrap/dist/css/bootstrap.min.css /app/static/css/bootstrap.min.css
 COPY node_modules/bootstrap/dist/js/bootstrap.bundle.min.js /app/static/js/bootstrap.bundle.min.js
 COPY node_modules/jquery/dist/jquery.min.js /app/static/js/jquery.min.js
-
+COPY pretrained_models/pipe.joblib /app/pretrained_models/pipe.joblib
 
 
 CMD ["python3", "web.py"]
