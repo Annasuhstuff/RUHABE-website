@@ -16,7 +16,10 @@ COPY node_modules/bootstrap/dist/css/bootstrap.min.css /app/static/css/bootstrap
 COPY node_modules/bootstrap/dist/js/bootstrap.bundle.min.js /app/static/js/bootstrap.bundle.min.js
 COPY node_modules/jquery/dist/jquery.min.js /app/static/js/jquery.min.js
 COPY pretrained_models/pipe.joblib /app/pretrained_models/pipe.joblib
-
+COPY static/img/number_d.png /app/static/img/number_d.png
+COPY static/img/number_w.png /app/static/img/number_w.png
+COPY static/img/zipf.png /app/static/img/zipf.png
+COPY static/js/main.js /app/static/js/main.js
 
 CMD ["python3", "web.py"]
 
