@@ -12,4 +12,4 @@ COPY rest.py /app/rest.py
 
 CMD ["python3", "rest.py"]
 
-EXPOSE 5000
+EXPOSE 8000

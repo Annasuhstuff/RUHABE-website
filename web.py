@@ -1,17 +1,19 @@
 from flask import Flask, render_template, request
-from joblib import load
+import os
+import requests
+# from joblib import load
 
-trained = load("pretrained_models/pipe.joblib")
+# trained = load("pretrained_models/pipe.joblib")
 
-def predict(text):
-
-    prediction = trained.predict([text])
-    result = prediction[0]
-
-    return f'Группа хейта в тексте: {result}'
+# def predict(text):
+#     prediction = trained.predict([text])
+#     result = prediction[0]
+#     return f'Группа хейта в тексте: {result}'
 
 
 app = Flask(__name__)
+
+REST_URL = os.environ.get('REST_URL', 'localhost:8000')
 
 
 @app.route("/index")
@@ -31,9 +33,9 @@ def ruhabe_predict():
     if len(request.args) > 1:
         text = request.args['text']
         model = request.args['selected_model']
-        predicted_text = predict(text)
-        return render_template("model_predict_result.html.j2", predicted_text=predicted_text)
-
+        response = requests.get(f'{REST_URL}/predict', params={'text': text, 'model': model}).json()
+        # predicted_text = predict(text)
+        return render_template("model_predict_result.html.j2", predicted_text=response['group'])
     return render_template("model_predict.html.j2")
 
 @app.route("/stats")
