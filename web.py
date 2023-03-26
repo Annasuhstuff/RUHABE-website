@@ -36,8 +36,7 @@ def ruhabe_predict():
         if len(text) == 0:
             return render_template("model_predict.html.j2", empty_text=True)
         response = requests.get(f'{REST_URL}/predict', params={'text': text, 'model': model}).json()
-        # predicted_text = predict(text)
-        return render_template("model_predict_result.html.j2", predicted_text=response['group'])
+        return render_template("model_predict_result.html.j2", predicted_text=response['group'], input_text=text)
     return render_template("model_predict.html.j2")
 
 @app.route("/stats")

@@ -1,12 +1,8 @@
 {% extends "base.html.j2" %}
 
-
-
 {% block body %}
 <body>
 <main>
-
-
     <div class="position-relative overflow-hidden p-2 p-md-2 m-md-2 text-center bg-light">
         <div class="col-md-6 p-lg-6 mx-auto my-5">
             <h1 class="display-4 font-weight-normal">Выявление хейта</h1>
@@ -42,6 +38,11 @@
     </div>
 
     <div class="container-fluid text-center">
+    <div class="row content">
+    <div class="col-sm-7 text-left">
+            <h4>Введенный текст: {{ input_text }}</h4>
+        </div>
+    </div>
     <div class="row content">
         <div class="col-sm-7 text-left">
             <h4>Предсказанная категория: {{ predicted_text }}</h4>

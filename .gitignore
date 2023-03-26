@@ -163,5 +163,6 @@ cython_debug/
 
 node_modules/
 gitignore/
-/pretrained_models/pipe.joblib
+pretrained_models/
 .DS_Store
+
