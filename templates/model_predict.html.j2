@@ -1,14 +1,17 @@
+
 {% extends "base.html.j2" %}
 
-
+{% set active_page = "model_predict" %}
 
 {% block body %}
 <body>
 <main>
-    <div class="position-relative overflow-hidden p-2 p-md-2 m-md-2 text-center bg-light">
-        <div class="col-md-6 p-lg-6 mx-auto my-5">
-            <h1 class="display-4 font-weight-normal">Выявление хейта</h1>
-            <p class="lead font-weight-normal">Введите текст и узнайте, на кого именно направлен хейт.</p>
+    <div class="row g-9">
+        <div class="col-md-9">
+            <div class="position-relative overflow-hidden p-2 p-md-2 m-md-2 text-center bg-light">
+                <div class="col-md-8 p-lg-8 mx-auto my-5">
+                    <h1 class="display-4 font-weight-normal">Выявление хейта</h1>
+                    <p class="lead font-weight-normal">Введите текст и узнайте, на кого именно направлен хейт.</p>
             <div class="container-fluid">
                 <form novalidate="novalidate">
                     <div class="d-flex justify-content-center align-items-center">
@@ -34,18 +37,102 @@
 
                                 <div class="col-lg-auto col-md-auto col-sm-auto p-0">
                                     <button type="submit" class="btn btn-danger wrn-btn">Search</button>
-
                                 </div>
                             </div>
                         </div>
                     </div>
                 </form>
+                    </div>
+                </div>
             </div>
         </div>
+        <div class="col-md-3">
+            <div class="position-sticky" style="top: 2rem;">
+                <div class="p-4 mb-3 bg-light rounded">
+                    <p> Мы предлагаем ознакомиться с базовой информацией о хейте, которая может пригодиться для
+                        формулирования запросов</p>
+                    <button id="myBtn" class="btn btn-outline-danger">Справка о токсиченой речи</button>
+                    <div id="myModal" class="modal">
+
+                        <div class="modal-content">
+                            <div class="modal-header">
+                                <span class="close">&times;</span>
+                                <h2>Краткая справка о хейте</h2>
+                            </div>
+                            <div class="modal-body">
+                                <p><i>Токсичная лексика (хейтспич)</i> - обобщённое обозначение языковых средств
+                                    выражения резко
+                                    отрицательного
+                                    отношения «оппонентов» — носителей иной системы религиозных, национальных,
+                                    культурных или же
+                                    более
+                                    специфических, субкультурных ценностей. Это явление может выступать как форма
+                                    проявления
+                                    расизма,
+                                    ксенофобии, межнациональной вражды и нетерпимости, гомофобии, а также сексизма.
+                                </p>
+                                <p><i>Таргетная группа</i> - это группа людей, имеющая какие-либо общие
+                                    характеристики,
+                                    на которую
+                                    может быть
+                                    направлен хейт. Зачастую это гендер, раса, сексуальная ориентация и др.</p>
+
+                                <b>Примеры хейт-реплик:</b>
+
+                                <p><i>- я сново оскарбил твою мать суку которую жиды и хачи ебали </i>(хейт
+                                    направлен
+                                    сразу на
+                                    несколько таргетных групп: «Женщины», «Место рождения»)</p>
+
+                                <p><i> - бля, петух ебаный. зашкварен и задеанонен. надеюсь его посадят на
+                                    бутылку.</i>(хейт
+                                    направлен на таргетную группу «ЛГБТК+»)</p>
+                            </div>
+                            <div class="modal-footer">
+                            </div>
+                        </div>
+
+                    </div>
+
+                    <script>
+                        var modal = document.getElementById("myModal");
+
+                        var btn = document.getElementById("myBtn");
+
+                        var span = document.getElementsByClassName("close")[0];
+
+                        btn.onclick = function () {
+                            modal.style.display = "block";
+                        }
+
+                        span.onclick = function () {
+                            modal.style.display = "none";
+                        }
+
+                        window.onclick = function (event) {
+                            if (event.target == modal) {
+                                modal.style.display = "none";
+                            }
+                        }
+                    </script>
+                </div>
+                <div class="p-4">
+                    <a href="simple_pred" class="btn btn-outline-secondary" role="button" aria-pressed="true">Вернуться к простому способу предсказания</a>
+                </div>
+            </div>
+        </div>
+
+    </div>
     </div>
 
 
 </main>
+<footer class="footer py-3 my-4">
+   <p class="text-center text-muted">© RuHateBe project <a href="https://github.com/Annasuhstuff/RUHABE-website"><img
+    src="{{ url_for('static', filename='img/github-mark.png') }}"
+            width="42"
+            height="30" alt="Cсылка на проект"></a></p>
+</footer>
 </body>
 
 {% endblock %}

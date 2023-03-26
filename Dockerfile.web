@@ -16,9 +16,16 @@ COPY node_modules/bootstrap/dist/css/bootstrap.min.css /app/static/css/bootstrap
 COPY node_modules/bootstrap/dist/js/bootstrap.bundle.min.js /app/static/js/bootstrap.bundle.min.js
 COPY node_modules/jquery/dist/jquery.min.js /app/static/js/jquery.min.js
 COPY pretrained_models/pipe.joblib /app/pretrained_models/pipe.joblib
+# COPY pretrained_models/ruBert-large /app/pretrained_models/ruBert-large
+# COPY pretrained_models/model_ruBert_large.bin /app/pretrained_models/model_ruBert_large.bin
 COPY static/img/number_d.png /app/static/img/number_d.png
 COPY static/img/number_w.png /app/static/img/number_w.png
 COPY static/img/zipf.png /app/static/img/zipf.png
+COPY static/img/annap-photo.jpg /app/static/img/annap-photo.jpg
+COPY static/img/annas-photo.jpg /app/static/img/annas-photo.jpg
+COPY static/img/elina-photo.jpg /app/static/img/elina-photo.jpg
+COPY static/img/elisei-photo.jpg /app/static/img/elisei-photo.jpg
+COPY static/img/github-mark.png /app/static/img/github-mark.png
 COPY static/js/main.js /app/static/js/main.js
 
 CMD ["python3", "web.py"]

@@ -1,0 +1,105 @@
+{% extends "base.html.j2" %}
+
+{% set active_page = "team" %}
+
+{% block body %}
+
+<body>
+<main>
+    <div class="row flex-lg-row-reverse align-items-center g-5 py-3">
+        <div class="col-2 col-sm-4 col-lg-2">
+        </div>
+        <div class="col-lg-9">
+            <h1 class="display-4 fw-bold lh-1 mb-3">О команде</h1>
+
+            <div class="row">
+                <div class="col-sm-3">
+                    <div class="team-member" id="elisei">
+                        <img src="{{ url_for('static', filename='img/elisei-photo.jpg') }}" width="150" height="150">
+                        <h3>Рыков Елисей</h3>
+                        <p>Веб-разработчик, студент НИУ ВШЭ</p>
+                    </div>
+                </div>
+                <div class="col-sm-3">
+                    <div class="team-member" id="john">
+                        <img src="{{ url_for('static', filename='img/annap-photo.jpg') }}" width="150" height="150">
+                        <h3>Палаткина Анна</h3>
+                        <p>Веб-разработчик, студентка НИУ ВШЭ</p>
+                    </div>
+                </div>
+                <div class="col-sm-3">
+
+                    <div class="team-member" id="anna">
+                        <img src="{{ url_for('static', filename='img/elina-photo.jpg') }}" width="150" height="150">
+                        <h3>Сигдел Элина</h3>
+                        <p>Веб-разработчик, студентка НИУ ВШЭ</p>
+                    </div>
+                </div>
+                <div class="col-sm-3">
+                    <div class="team-member" id="anna">
+                        <img src="{{ url_for('static', filename='img/annas-photo.jpg') }}" width="150" height="150">
+                        <h3>Суханова Анна</h3>
+                        <p>Веб-разработчик, студентка НИУ ВШЭ</p>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+    </div>
+    <hr class="my-2">
+    <div class="row flex-lg-row-reverse align-items-center g-5 py-3">
+        <div class="col-2 col-sm-4 col-lg-2">
+        </div>
+        <div class="col-lg-9">
+            <h4 class="mb-3">Обратная связь</h4>
+            <p>Здесь Вы можете задать вопрос отноосительно сервиса, оставить пожелания по улучшению или сообщить о </p>
+            <form class="needs-validation" novalidate="">
+                <div class="row g-3">
+
+                    <div class="col-4">
+                        <label for="username" class="form-label">Как Вас зовут <span
+                                class="text-muted">(Необязательно)</span></label>
+                        <div class="input-group has-validation">
+                            <input type="text" class="form-control" id="username"
+                                   placeholder="Как можно к Вам обращаться"
+                                   required="">
+                        </div>
+                    </div>
+
+                    <div class="col-4">
+                        <label for="email" class="form-label">Эл. адрес <span class="text-muted">(Необязательно)</span></label>
+                        <input type="email" class="form-control" id="email" placeholder="you@example.com">
+                        <div class="invalid-feedback">
+                            Пожалуйста, введите действующий адрес электронной почты для обратной связи.
+                        </div>
+                    </div>
+
+                    <div class="col-4">
+                        <label for="request" class="form-label">Обращение</label>
+                        <input type="text" class="form-control" id="request"
+                               placeholder="Для улучшения сервиса можно добавить ..." required="">
+                        <div class="invalid-feedback">
+                            Введите ваше обращение
+                        </div>
+                    </div>
+
+                </div>
+                <hr>
+                <button class="btn btn-outline-secondary" type="submit">Отправить</button>
+            </form>
+        </div>
+    </div>
+</main>
+
+
+<footer class="footer py-3 my-4">
+    <p class="text-center text-muted">© RuHateBe project <a href="https://github.com/Annasuhstuff/RUHABE-website"><img
+            src="{{ url_for('static', filename='img/github-mark.png') }}"
+            width="42"
+            height="30" alt="Cсылка на проект"></a></p>
+</footer>
+
+
+</body>
+
+{%endblock%}

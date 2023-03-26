@@ -1,5 +1,13 @@
 version: "3.3"
 services:
+  rest:
+    build:
+      context: .
+      dockerfile: Dockerfile.rest
+    ports:
+      - "8000:8000"
+    volumes:
+      - ./:/app
   web:
     build:
       context: .
@@ -13,11 +21,3 @@ services:
       - ./web.py:/app/web.py
     environment:
       - "REST_URL=http://rest:8000"
-  rest:
-    build:
-      context: .
-      dockerfile: Dockerfile.rest
-    ports:
-      - "8000:8000"
-    volumes:
-      - ./:/app

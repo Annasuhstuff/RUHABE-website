@@ -5,8 +5,6 @@
 {% block body %}
 <body>
 <main>
-
-
 <div class="row g-9">
         <div class="col-md-9">
             <div class="position-relative overflow-hidden p-2 p-md-2 m-md-2 text-center bg-light">
@@ -15,49 +13,30 @@
                     <p class="lead font-weight-normal">Введите текст и узнайте, на кого именно направлен хейт.</p>
                     <div class="container-fluid">
                         <form novalidate="novalidate">
-                    <div class="d-flex justify-content-center align-items-center">
-                        <div class="col-lg-12">
-                            <div class="d-flex justify-content-center">
-                                <div class="col-lg-6 col-md-auto col-sm-auto p-0">
-                                    <input type="text" class="form-control search-slt" name="text" placeholder="Введите текст">
-                                </div>
-                                <div class="col-lg-4 col-md-auto col-sm-auto p-0">
-                                    <select class="form-control search-slt" name='selected_model' id="exampleFormControlSelect1">
-                                        <option>Выберете модель</option>
-                                        <option>Bert</option>
-                                        <option>GPT</option>
-                                        <option>Logistic Regression</option>
-                                    </select>
-                                </div>
-
-                                {% if empty_text %}
-                                <script type="text/javascript">
-                                    alert("Вы ввели пустой текст");
-                                </script>
-                                {% endif %}
-
-                                <div class="col-lg-auto col-md-auto col-sm-auto p-0">
-                                    <button type="submit" class="btn btn-danger wrn-btn">Search</button>
+                            <div class="d-flex justify-content-center align-items-center">
+                                <div class="col-lg-8">
+                                    <div class="d-flex justify-content-center">
+                                        <div class="col-lg-6 col-md-auto col-sm-auto p-0">
+                                            <input type="text" class="form-control search-slt" name="text" placeholder="Введите текст">
+                                        </div>
+                                         {% if empty_text %}
+                                        <script type="text/javascript">
+                                            alert("Вы ввели пустой текст");
+                                        </script>
+                                        {% endif %}
+                                        <div class="col-lg-auto col-md-auto col-sm-auto p-0">
+                                            <button type="submit" class="btn btn-danger wrn-btn">Search</button>
+                                        </div>
+                                    </div>
                                 </div>
                             </div>
-                        </div>
-                    </div>
-                </form>
+                        </form>
                     </div>
                 </div>
-
             </div>
+        </div>
 
-    <div class="container-fluid text-center">
-    <div class="row content">
-        <div class="col-sm-7 text-left">
-            <h4>Введенный текст: {{ input_text }}</h4>
-            <h4>Выбранная модель: {{ input_model }}</h4>
-            <h4>Предсказанная категория: {{ predicted_text }}</h4>
-        </div>
-    </div>
-    </div>
-        </div>
+
         <div class="col-md-3">
             <div class="position-sticky" style="top: 2rem;">
                 <div class="p-4 mb-3 bg-light rounded">
@@ -83,21 +62,18 @@
                                     расизма,
                                     ксенофобии, межнациональной вражды и нетерпимости, гомофобии, а также сексизма.
                                 </p>
-                                <p><i>Таргетная группа</i> - это группа людей, имеющая какие-либо общие
-                                    характеристики,
+                                <p><i>Таргетная группа</i> - это группа людей, имеющая какие-либо общие характеристики,
                                     на которую
                                     может быть
                                     направлен хейт. Зачастую это гендер, раса, сексуальная ориентация и др.</p>
 
                                 <b>Примеры хейт-реплик:</b>
 
-                                <p><i>- я сново оскарбил твою мать суку которую жиды и хачи ебали </i>(хейт
-                                    направлен
+                                <p><i>- я сново оскарбил твою мать суку которую жиды и хачи ебали </i>(хейт направлен
                                     сразу на
                                     несколько таргетных групп: «Женщины», «Место рождения»)</p>
 
-                                <p><i> - бля, петух ебаный. зашкварен и задеанонен. надеюсь его посадят на
-                                    бутылку.</i>(хейт
+                                <p><i> - бля, петух ебаный. зашкварен и задеанонен. надеюсь его посадят на бутылку.</i>(хейт
                                     направлен на таргетную группу «ЛГБТК+»)</p>
                             </div>
                             <div class="modal-footer">
@@ -129,18 +105,23 @@
                     </script>
                 </div>
                 <div class="p-4">
-                    <a href="simple_pred" class="btn btn-outline-secondary" role="button" aria-pressed="true">Вернуться к простому способу предсказания</a>
+                    <p>Мы также предлагаем использовать продвинутые инструменты для определения
+                        направленного
+                        хейта. </p>
+
+                    <p>Вы можете воспользоваться ими, кликнув на ссылку ниже. Вам будет доступен выбор алгоритма, с
+                        помощью которого будет выполнено определение принадлежности текста к определенной группе. </p>
+                    <a href="model_pred" class="btn btn-outline-secondary" role="button" aria-pressed="true">Продвинутое определение хейта</a>
                 </div>
             </div>
         </div>
 
     </div>
     </div>
-
 </main>
 <footer class="footer py-3 my-4">
-   <p class="text-center text-muted">© RuHateBe project <a href="https://github.com/Annasuhstuff/RUHABE-website"><img
-            src="{{ url_for('static', filename='img/github-mark.png') }}"
+    <p class="text-center text-muted">© RuHateBe project <a href="https://github.com/Annasuhstuff/RUHABE-website"><img
+        src="{{ url_for('static', filename='img/github-mark.png') }}"
             width="42"
             height="30" alt="Cсылка на проект"></a></p>
 </footer>

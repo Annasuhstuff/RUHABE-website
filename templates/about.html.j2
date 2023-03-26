@@ -1,5 +1,7 @@
 {% extends "base.html.j2" %}
 
+{% set active_page = "about" %}
+
 {%block body%}
 <body>
 
@@ -40,8 +42,11 @@
 </main>
 
 
-    <footer class="footer py-3 my-4">
-        <p class="text-center text-muted">© RuHateBe project</p>
+<footer class="footer py-3 my-4">
+       <p class="text-center text-muted">© RuHateBe project <a href="https://github.com/Annasuhstuff/RUHABE-website"><img
+            src="{{ url_for('static', filename='img/github-mark.png') }}"
+            width="42"
+            height="30" alt="Cсылка на проект"></a></p>
     </footer>
 
 

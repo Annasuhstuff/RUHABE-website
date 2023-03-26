@@ -1,5 +1,16 @@
 <!DOCTYPE html>
 <html lang="ru">
+
+{% set navigation_bar = [
+    ('about', 'О проекте'),
+    ('simple_pred', 'Определить хейт'),
+    ('stats', 'Статистика'),
+    ('download', 'Скачать'),
+    ('team', 'О команде')
+] -%}
+
+{% set active_page = active_page|default('about') -%}
+
 <head>
     <meta charset="UTF-8">
     <title>RuHateBe</title>
@@ -15,6 +26,107 @@
             margin-top:-20px;
             width:100%;
         }
+        .box{
+            box-sizing: border-box;
+            border: 3px solid transparent;
+            background-clip:padding-box;
+            background-color: snow;
+            }
+        .carousel-inner img {
+            margin: auto;
+            width:100%;
+            max-height: 200px
+        }
+        .carousel-caption {
+            position: relative;
+            bottom: 10%;
+            left: 1%;
+            z-index: 20;
+        }
+        .team-member {
+            display: inline-block;
+            vertical-align: top;
+            width: 100%;
+            padding: 10px;
+            box-sizing: border-box;
+        }
+        .modal {
+            display: none;
+            position: fixed;
+            z-index: 1;
+            padding-top: 100px;
+            left: 0;
+            top: 0;
+            width: 80%;
+            height: 80%;
+            overflow: auto;
+        }
+
+        .modal-content {
+            position: relative;
+            margin: auto;
+            padding: 0;
+            border: 1px solid #888;
+            width: 80%;
+            box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+            -webkit-animation-name: animatetop;
+            -webkit-animation-duration: 0.4s;
+            animation-name: animatetop;
+            animation-duration: 0.4s
+        }
+
+        @-webkit-keyframes animatetop {
+            from {
+                top: -300px;
+                opacity: 0
+            }
+            to {
+                top: 0;
+                opacity: 1
+            }
+        }
+
+        @keyframes animatetop {
+            from {
+                top: -300px;
+                opacity: 0
+            }
+            to {
+                top: 0;
+                opacity: 1
+            }
+        }
+
+        .close {
+            color: #a7a5a3;
+            float: right;
+            font-size: 28px;
+            font-weight: bold;
+        }
+
+        .close:hover,
+        .close:focus {
+            color: #000;
+            text-decoration: none;
+            cursor: pointer;
+        }
+
+        .modal-header {
+            padding: 2px 16px;
+            background-color: snow;
+            color: #a7a5a3;
+        }
+
+        .modal-body {
+            padding: 2px 16px;
+        }
+
+        .modal-footer {
+            padding: 2px 16px;
+            background-color: white;
+            color: white;
+        }
+
     </style>
 
     <nav class="navbar navbar-expand-lg navbar-light bg-light">
@@ -25,18 +137,9 @@
         <a class="navbar-brand" href="index">RuHateBe</a>
         <div class="collapse navbar-collapse" id="navbarTogglerDemo03">
           <ul class="navbar-nav me-auto mb-md-4 mb-lg-0">
-            <li class="nav-item">
-              <a class="nav-link" href="about">О проекте</a>
-            </li>
-            <li class="nav-item">
-              <a class="nav-link" href="model_pred">Определить хейт</a>
-            </li>
-            <li class="nav-item">
-              <a class="nav-link" href="stats">Статистика</a>
-            </li>
-            <li class="nav-item">
-              <a class="nav-link" href="download">Скачать</a>
-            </li>
+              {% for href, desc in navigation_bar %}
+              <a class="nav-item nav-link {% if id == active_page %}active{% endif %}" href="{{ href }}">{{ desc }}</a>
+              {% endfor %}
           </ul>
         </div>
       </div>
@@ -47,7 +150,10 @@
 {% endblock %}
 
 <footer class="footer py-3 my-4">
-        <p class="text-center text-muted">© RuHateBe project</p>
+       <p class="text-center text-muted">© RuHateBe project <a href="https://github.com/Annasuhstuff/RUHABE-website"><img
+            src="{{ url_for('static', filename='img/github-mark.png') }}"
+            width="42"
+            height="30" alt="Cсылка на проект"></a></p>
     </footer>
 
 <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
